@@ -1,7 +1,13 @@
+//Se importa el modulo Express para ocupar en nuestro proyecto
 import express from "express";
+//Se importa el modulo de graphql para Express y poder implementarlo
 import {graphqlHTTP} from "express-graphql";
+//Se importa nuestro Schema donde estaran nuestra definiciones para nuestra consultas
 import schema from "./schema.js";
 
+//Se importa la funcion de connect para nuestra base de datos de MongoDB
+import {connect} from "./dbMongo.js";
+connect();
 
 //Se ocupa Express para la API
 const app = express();

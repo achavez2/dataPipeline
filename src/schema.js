@@ -1,4 +1,6 @@
+//Se importa makeExecutableSchema del modulo graphql-tools, en esta variable se guardaran nuestra definiciones y resolvers
 import { makeExecutableSchema } from "graphql-tools";
+//Se importa los Resolvers respectivos a nuestro Schemas
 import { resolvers } from "./resolvers.js";
 
 // Se definen los tipos que podra ocupar nuestras consultas y sus tipos
