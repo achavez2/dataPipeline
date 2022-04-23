@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 export  async function connect(){
 	//Se Implemente un Try para poder revisar el error, de existar al realizar la conexion
 	try{
-		await mongoose.connect('mongodb://localhost:27017/dbCDMXMetrobus', {
+		await mongoose.connect('mongodb://localhost/dbCDMXMetrobus', {
 		useNewUrlParser: true
 		})
 		console.log('>>>Se ha conectado a la DB: dbCDMXMetrobus');

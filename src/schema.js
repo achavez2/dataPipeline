@@ -24,7 +24,7 @@ const typeDefs =`
 
 	type Response{
 		message: String
-		recordSave: Int 
+		total: Int
 		offset: Int 
 	}
 
