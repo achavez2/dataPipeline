@@ -8,7 +8,8 @@ import { resolvers } from "./resolvers.js";
 //Tambien se definen Otros tipos objetos con sus campos y tipos
 const typeDefs =`
 	type Query {
-		dataUnits: [Unit]
+		availableUnits: [AvailableUnit]
+		locationUnitByID(_id: Int): LocationUnit
 	}
 
 	type Unit {
@@ -19,9 +20,28 @@ const typeDefs =`
 		vehicle_label: String
 		vehicle_current_status: Int 
 		geographic_point: String
+		direction: String,
 		town_hall: String 
 	}
 
+	type AvailableUnit {
+		_id: ID
+		id: Int
+		vehicle_id: Int 
+		vehicle_label: String
+		vehicle_current_status: Int 
+	}
+
+	type LocationUnit {
+		_id: ID
+		id: Int
+		vehicle_id: Int 
+		vehicle_label: String
+		geographic_point: String
+		direction: String,
+		town_hall: String 
+	}
+	
 	type Response{
 		message: String
 		total: Int

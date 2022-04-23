@@ -30,6 +30,8 @@ export function consultTownHallCDMXById(unit){
 				}
 
 				unit.town_hall = direccion.slice(ini,fin);
+				unit.direction = direccion;
+
 				//console.log(unit.town_hall);
 
 				resolve(unit);

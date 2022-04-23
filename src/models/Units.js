@@ -26,6 +26,7 @@ const unitSchema = new Schema({
 	trip_id: Number,
 	trip_start_date: Number,
 	trip_route_id: Number,
+	direction: String,
 	town_hall: String
 });
 

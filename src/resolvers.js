@@ -7,8 +7,12 @@ import Units from "./models/Units.js";
 export const resolvers ={
 	//Query para definir todas las consultas que se puedan realizar
 	Query: {
-		async dataUnits(){
-			return await Units.find();
+		//Se obtienen las
+		async availableUnits(){
+			return await Units.find({"vehicle_current_status":1}).sort({_id:1});
+		},
+		async locationUnitByID(_,{_id}){
+			return await Units.findById(_id);
 		}
 	},
 	//Mutation para definir las creaciones que se puedan realizar

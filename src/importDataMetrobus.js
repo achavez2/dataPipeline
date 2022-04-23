@@ -3,7 +3,6 @@ import axios from "axios";
 //Se importa modelo Unit para los datos de las unidades del Metrobus
 import Units from "./models/Units.js";
 
-
 import {consultTownHallCDMXById} from "./dataGoogleMaps.js";
 
 //Se define la función, con sus valores de entrada:
@@ -12,7 +11,7 @@ import {consultTownHallCDMXById} from "./dataGoogleMaps.js";
 export function consultRecords(limit,offset){
 	//Se ocupa Promise para que espere la respuesta cuando se realice la consulta
 	return new Promise((resolve,rejected) =>{
-		if(limit>50){
+		if(limit>50	){
 			//se define respuesta con variables de salida
 			var res = {"message": "Maximo de Registro a Importar es 50", "total": 0, "offset": 0};
 
@@ -65,6 +64,7 @@ async function addRecord(record){
 	const nUnit = new Units(record);
 	// se agrega campo para posteriormente colocar la Alcaldia
 	nUnit.town_hall = "";
+	nUnit.direction = "";
 	//console.log(nUnit);
 
 	await consultTownHallCDMXById(nUnit)
