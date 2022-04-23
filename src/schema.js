@@ -8,7 +8,28 @@ import { resolvers } from "./resolvers.js";
 //Tambien se definen Otros tipos objetos con sus campos y tipos
 const typeDefs =`
 	type Query {
-		prueba: String
+		dataUnits: [Unit]
+	}
+
+	type Unit {
+		_id: ID
+		id: Int
+		data_updated: String
+		vehicle_id: Int 
+		vehicle_label: String
+		vehicle_current_status: Int 
+		geographic_point: String
+		town_hall: String 
+	}
+
+	type Response{
+		message: String
+		recordSave: Int 
+		offset: Int 
+	}
+
+	type Mutation {
+		importDataMetrobus(limit: Int, offset: Int): Response
 	}
 
 `; 
