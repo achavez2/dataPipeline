@@ -6,10 +6,13 @@ import { resolvers } from "./resolvers.js";
 // Se definen los tipos que podra ocupar nuestras consultas y sus tipos
 //Empenzando por Query, para que solo se puedan hacer esas consultas
 //Tambien se definen Otros tipos objetos con sus campos y tipos
+//Se define mutation para funciones que realicen modificaciones y guardado en la base de datos
 const typeDefs =`
 	type Query {
 		availableUnits: [AvailableUnit]
 		locationUnitByID(_id: Int): LocationUnit
+		listTownHallCDMX: [String]
+		lisUnitsByTownHallCDMX(townHall: String): [Unit]
 	}
 
 	type Unit {
@@ -21,7 +24,8 @@ const typeDefs =`
 		vehicle_current_status: Int 
 		geographic_point: String
 		direction: String,
-		town_hall: String 
+		town_hall: String,
+		federal_entity: String
 	}
 
 	type AvailableUnit {
@@ -38,10 +42,11 @@ const typeDefs =`
 		vehicle_id: Int 
 		vehicle_label: String
 		geographic_point: String
-		direction: String,
+		direction: String
 		town_hall: String 
+		federal_entity: String
 	}
-	
+
 	type Response{
 		message: String
 		total: Int

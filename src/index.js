@@ -15,7 +15,7 @@ const app = express();
 //Se define un mensaje para el directorio / con una respuesta JSON
 app.get('/', (req,res)=> {
 	res.json({
-		message: "Bienvenidos, API-GraphQL"
+		message: "Bienvenidos, API-dataCDMXMetrobus"
 	})
 });
 

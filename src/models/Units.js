@@ -27,7 +27,8 @@ const unitSchema = new Schema({
 	trip_start_date: Number,
 	trip_route_id: Number,
 	direction: String,
-	town_hall: String
+	town_hall: String,
+	federal_entity: String
 });
 
 export default model('Units', unitSchema);

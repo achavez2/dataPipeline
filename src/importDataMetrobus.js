@@ -62,9 +62,10 @@ async function addRecord(record){
 
 	//guardar registro proveniente de API de Metrobus en constante para actualizar o guardar
 	const nUnit = new Units(record);
-	// se agrega campo para posteriormente colocar la Alcaldia
+	// se agrega campo para posteriormente colocar la Alcaldia, Direccion y Entidad Federativa
 	nUnit.town_hall = "";
 	nUnit.direction = "";
+	nUnit.federal_entity = "";
 	//console.log(nUnit);
 
 	await consultTownHallCDMXById(nUnit)
