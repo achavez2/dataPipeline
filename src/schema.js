@@ -9,8 +9,8 @@ import { resolvers } from "./resolvers.js";
 //Se define mutation para funciones que realicen modificaciones y guardado en la base de datos
 const typeDefs =`
 	type Query {
-		availableUnits: [AvailableUnit]
-		locationUnitByID(_id: Int): LocationUnit
+		availableUnits: [Unit]
+		locationUnitByID(_id: Int): Unit
 		listTownHallCDMX: [String]
 		lisUnitsByTownHallCDMX(townHall: String): [Unit]
 	}
@@ -22,28 +22,17 @@ const typeDefs =`
 		vehicle_id: Int 
 		vehicle_label: String
 		vehicle_current_status: Int 
+		position_latitude: String
+		position_longitude: String
 		geographic_point: String
+		position_speed: Int
+		position_odometer: Int
+		trip_schedule_relationship: Int
+		trip_id: Int
+		trip_start_date: Int
+		trip_route_id: Int
 		direction: String,
 		town_hall: String,
-		federal_entity: String
-	}
-
-	type AvailableUnit {
-		_id: ID
-		id: Int
-		vehicle_id: Int 
-		vehicle_label: String
-		vehicle_current_status: Int 
-	}
-
-	type LocationUnit {
-		_id: ID
-		id: Int
-		vehicle_id: Int 
-		vehicle_label: String
-		geographic_point: String
-		direction: String
-		town_hall: String 
 		federal_entity: String
 	}
 
