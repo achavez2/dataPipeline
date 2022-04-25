@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  apigraphql:
+    container_name: apigraphql
+    restart: always
+    build: .
+    ports: 
+      - "3000:3000"
+    links:
+      - mongo
+    volumes:
+      - .:/usr/src/app
+  mongo:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports: 
+      - "27017:27017"
+    logging:
+        driver: none

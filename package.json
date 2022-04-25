@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "clean": "rimraf dist"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
