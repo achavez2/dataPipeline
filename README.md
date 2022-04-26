@@ -11,7 +11,7 @@ consultado mediante un API Rest filtrando por unidad o por alcaldía.
 
 2.- availableUnits. Realiza la consulta de todas las unidades disponibles del Metrobus de CDMX.
 
-3.- locationUnitByID. Realiza la consulta de una unidad por ID.
+3.- locationUnitByID. Se obtiene la localizacion de una unidad por su ID.
 
 4.- listTownHallCDMX. Realiza la consulta de todas las alcaldias disponibles de la CDMX y regresa en una lista como respuesta.
 
