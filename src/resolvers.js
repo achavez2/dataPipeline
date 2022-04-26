@@ -10,8 +10,9 @@ export const resolvers = {
 		return await Units.find({"vehicle_current_status":1}).sort({_id:1});
 	},
 	async locationUnitByID({_id}){
-		//Se realiza la consulta por ID con el campo _id
-		return await Units.findById(_id);
+		//Se realiza la consulta por ID con el campo _id para obtener la localizacion de la unidad
+		const res = await Units.findById(_id);
+		return res.direction;
 	},
 	async listTownHallCDMX(){
 		//Se realiza la consulta con un distinct en base al campo town_hall, para obtener el lista de ese campo pero sin repeticiones de alcaldias y junto a un where donde se validad que la entidad sea CDMX

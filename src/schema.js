@@ -8,7 +8,7 @@ import {buildSchema} from "graphql";
 export const schema = buildSchema(`
 	type Query {
 		availableUnits: [Unit]
-		locationUnitByID(_id: Int): Unit
+		locationUnitByID(_id: Int): String
 		listTownHallCDMX: [String]
 		lisUnitsByTownHallCDMX(townHall: String): [Unit]
 	}

@@ -15,7 +15,7 @@ services:
       - .:/app
       - node_modules:/app/node_modules
     networks:
-      - dataPipeline-network
+      - apigraph-network
   
   mongo:
     image: mongo
@@ -28,10 +28,10 @@ services:
     logging:
         driver: none
     networks:
-      - dataPipeline-network
+      - apigraph-network
 
 networks:
-  dataPipeline-network:
+  apigraph-network:
     driver: bridge
 
 volumes:
