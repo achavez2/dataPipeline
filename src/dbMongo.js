@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 export  async function connect(){
 	//Se Implemente un Try para poder revisar el error, de existar al realizar la conexion
 	try{
-		//Se cambia direccion por la imagen docker "mongo" en puesto "27017" de acuerdo a que de esa forma se definieron en contenedor docker
+		//Se cambia direccion por la imagen docker "mongo" en puerto "27017" para su contenedor docker
 		await mongoose.connect('mongodb://mongo:27017/dbCDMXMetrobus', {
 		useNewUrlParser: true
 		})

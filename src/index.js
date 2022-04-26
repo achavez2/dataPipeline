@@ -3,7 +3,9 @@ import express from "express";
 //Se importa el modulo de graphql para Express y poder implementarlo
 import {graphqlHTTP} from "express-graphql";
 //Se importa nuestro Schema donde estaran nuestra definiciones para nuestra consultas
-import schema from "./schema.js";
+import {schema} from "./schema.js";
+//Se importa los Resolvers respectivos a nuestro Schemas desde
+import {resolvers} from "./resolvers.js";
 
 //Se importa la funcion de connect para nuestra base de datos de MongoDB
 import {connect} from "./dbMongo.js";
@@ -24,7 +26,8 @@ app.get('/', (req,res)=> {
 //Se les da las variables de graphiql= true para activar la herramienta grafica y el schema para las consultas que se puedan realizar
 app.use('/graphql', graphqlHTTP({
 	graphiql: true,
-	schema: schema
+	schema: schema,
+	rootValue: resolvers
 }));
 
 //Log para revisar que el server esta activo
