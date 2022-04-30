@@ -22,3 +22,5 @@ consultado mediante un API Rest filtrando por unidad o por alcaldía.
 Se crea el archivo "Dockerfile" para la creación de nuestro contenedor para "apigrapqhl".
 
 Se crea el archivo "docker-compose.yaml" para poder crear de forma más eficiente el contenedor de "apigrapqhl", así como el contenedor "mongo" para nuestra base de datos en Mongo DB. Lo cuales estarán enlazados por una red llamada "apigraph-network" para su comunicación. También se define los volumenes que se ocuparan para los respectivos contenedores.
+
+Para su ejecución en Docker se ocupa el comando: "docker-compose build" y "docker-compose up"

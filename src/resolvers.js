@@ -12,6 +12,7 @@ export const resolvers = {
 	async locationUnitByID({_id}){
 		//Se realiza la consulta por ID con el campo _id para obtener la localizacion de la unidad
 		const res = await Units.findById(_id);
+		//Y se valida "res" en caso de tener respuesta se retorna el valor res.direction, en el caso de ser null, se retorna un string vacio
 		return res ? res.direction : "";
 	},
 	async listTownHallCDMX(){
@@ -19,7 +20,7 @@ export const resolvers = {
 		const listTown_halls = await Units.distinct("town_hall").where('federal_entity').all(["CDMX"]);
 		//Se convierte en un objeto JSON y porteriormente se parsea para su retorno
 		var jsonCompleto = JSON.stringify(listTown_halls); 
-		var response = JSON.parse(jsonCompleto)
+		var response = JSON.parse(jsonCompleto);
 		return response;
 	},
 	async lisUnitsByTownHallCDMX({townHall}){
@@ -29,7 +30,9 @@ export const resolvers = {
 	},
 	importDataMetrobus({limit, offset}){
 		//Se realiza la funcion para obtener los datos del API de Metrobus de la CDMX y se obtiene su direccion, alcaldia y entidad en base al punto geografico valido de cada unidad
+		//Se agrega un catch para obtener el resultado en caso de error
 		return consultRecords(limit,offset)
-		.then((data) => data);
+		.then((data) => data)
+		.catch((data) => data);
 	}
 };

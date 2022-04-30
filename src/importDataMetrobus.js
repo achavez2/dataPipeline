@@ -44,11 +44,20 @@ export function consultRecords(limit,offset){
 
 				//se realiza proceso de convertir en JSON para enviar a respuesta del Resolver
 				var jsonCompleto = JSON.stringify(res); 
-				var response = JSON.parse(jsonCompleto)
+				var response = JSON.parse(jsonCompleto);
 				//console.log(response);
 		 
 		 		//Se manda el Resolve para el Promise de la funcion
 				resolve(response);
+			}).catch(function (error) {
+				//console.log(error);
+				//se define respuesta en caso de error
+				var res = {"message": "Error en Importe de Datos", "total": 0, "offset": 0};
+
+				//se realiza proceso de convertir en JSON para enviar a respuesta del Rejected
+				var jsonCompleto = JSON.stringify(res); 
+				var response = JSON.parse(jsonCompleto);
+				rejected(response);
 			});
 		}
 	});

@@ -14,10 +14,13 @@ export function consultTownHallCDMXById(unit){
 			if(response.data.status=="OK"){
 				//Se guarda en la variable direccion el formatted_address, que es la direccion completa del geographic_point
 				let direccion = response.data.results[0].formatted_address;
+
+				//Se definen variables para usar en el recorrido de formatted_address
 				let countC = 0 
 				let iniTH, finTH = 0
 				let iniFE, finFE = 0;
 
+				//Se define variable para obtener la longitud de formatted_address
 				const lengDir=direccion.length-1;
 
 				for(let x=lengDir;x>=0;x--){
@@ -39,7 +42,7 @@ export function consultTownHallCDMXById(unit){
 					}
 				}
 
-				//se guardad los datos en sus respectivos lugares del modelo Unit para su retorno
+				//se guardan los datos en sus respectivos lugares del modelo Unit para su retorno
 				unit.town_hall = direccion.slice(iniTH,finTH);
 				unit.federal_entity = direccion.slice(iniFE,finFE);
 				unit.direction = direccion;
