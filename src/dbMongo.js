@@ -9,10 +9,10 @@ export  async function connect(){
 		await mongoose.connect('mongodb://mongo:27017/dbCDMXMetrobus', {
 		useNewUrlParser: true
 		})
-		console.log('>>>Se ha conectado a la DB: dbCDMXMetrobus');
+		console.log('--Conexión establecida a la DB: dbCDMXMetrobus');
 	}
+	//En caso de error se obtendra con el catch para mandar un mensaje
 	catch(e){
-		console.log('No se ha podido Conectar');
-		console.log(e);
+		console.log('--Error al Conectar a la DB');
 	}
 }
